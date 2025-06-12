@@ -1,0 +1,15 @@
+.statistics {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 42mm);
+  grid-template-rows: repeat(2, 59mm);
+  background-color: blue;
+  gap: 1.3rem;
+}

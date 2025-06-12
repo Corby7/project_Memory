@@ -1,0 +1,25 @@
+.card {
+  max-width: 42mm;
+  max-height: 59mm;
+  background-color: #fde264;
+  border: 14px solid #fde264;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.inner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: rgb(130, 130, 130);
+  overflow: hidden;
+}
+
+.card img {
+  transform: scale(1.5);
+  background-color: rgb(130, 130, 130);
+}
