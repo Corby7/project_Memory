@@ -4,23 +4,25 @@
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  min-width: 100vw;
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  /* background-color: green; */
 }
 
 .playing-field-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  background-color: red;
+  /* background-color: red; */
   padding: 20px;
+  min-height: 100vh;
 }
-
-/* .cards-container .card {
-  flex-shrink: 10;
-} */

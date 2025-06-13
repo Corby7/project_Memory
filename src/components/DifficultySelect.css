@@ -1,0 +1,10 @@
+.difficulty-select {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.difficulty-select label {
+  display: flex;
+  gap: 20px;
+}
