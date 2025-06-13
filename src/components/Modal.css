@@ -4,17 +4,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  width: 30%;
   background: white;
-  padding: 20px;
-  border-radius: 1rem;
+  padding: 40px;
+  border-radius: 10px;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2);
   color: black;
   display: flex;
   flex-direction: column;
   /* justify-content: start;
   align-items: end; */
-  gap: 20px;
+  gap: 40px;
+  border: 5px dashed black;
 }
 
 .modal-title {
@@ -24,6 +24,6 @@
 .modal-body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   justify-content: space-between;
 }

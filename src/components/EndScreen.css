@@ -10,3 +10,9 @@
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2);
   color: black;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

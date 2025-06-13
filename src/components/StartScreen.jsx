@@ -1,6 +1,6 @@
 import LevelSelect from "./DifficultySelect";
-import "./StartScreen.css";
 import Modal from "./Modal";
+import "./StartScreen.css";
 
 export default function StartScreen({
   difficulty,

@@ -1,5 +1,11 @@
+@font-face {
+  font-family: PokemonGbFont;
+  src: url("./assets/fonts/PokemonGb-RAeo.ttf");
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: PokemonGbFont, Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

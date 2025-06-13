@@ -27,21 +27,23 @@ export default function DifficultySelect({
   ];
 
   return (
-    <div className="difficulty-select">
-      {difficultyLevels.map((level) => (
-        <label key={level.key}>
-          <input
-            type="radio"
-            className="nes-radio"
-            name="difficulty"
-            checked={difficulty === level.key}
-            onChange={() => onDifficultySelect(level.key)}
-          />
-          <span>
-            {level.name} - {level.description}
-          </span>
-        </label>
-      ))}
+    <>
+      <div className="difficulty-select">
+        {difficultyLevels.map((level) => (
+          <label key={level.key}>
+            <input
+              type="radio"
+              className="radio"
+              name="difficulty"
+              checked={difficulty === level.key}
+              onChange={() => onDifficultySelect(level.key)}
+            />
+            <span>
+              {level.name} - {level.description}
+            </span>
+          </label>
+        ))}
+      </div>
       <button
         className=""
         disabled={!difficulty}
@@ -54,6 +56,6 @@ export default function DifficultySelect({
       >
         Start Game
       </button>
-    </div>
+    </>
   );
 }

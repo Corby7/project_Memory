@@ -4,6 +4,7 @@ import Gameboard from "./components/Gameboard.jsx";
 import StartScreen from "./components/StartScreen.jsx";
 import EndScreen from "./components/EndScreen.jsx";
 import LoadingSpinner from "./components/LoadingSpinner.jsx";
+import pokeIcon from "./assets/images/pokeicon.ico";
 
 export default function App() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -46,6 +47,7 @@ export default function App() {
   };
 
   const startGame = async (difficulty) => {
+    setScore(0);
     setIsLoading(true);
     setDifficulty(difficulty);
 
@@ -75,33 +77,40 @@ export default function App() {
       pokemonList.length > 0 &&
       pokemonList.every((pokemon) => pokemon.hasBeenSelected)
     ) {
+      setHighScore(Math.max(highScore, score));
       setGameStatus("gameWon");
     }
   }, [pokemonList]);
 
   const handleCardClick = (selectedPokemon) => {
-    if (!selectedPokemon.hasBeenSelected) {
-      setScore(score + 1);
-      setPokemonList((prevPokemons) => {
-        const updatedList = prevPokemons.map((pokemon) =>
-          pokemon.id === selectedPokemon.id
-            ? { ...pokemon, hasBeenSelected: true }
-            : pokemon
-        );
+    if (gameStatus == "gamePlaying") {
+      if (!selectedPokemon.hasBeenSelected) {
+        setScore(score + 1);
+        setPokemonList((prevPokemons) => {
+          const updatedList = prevPokemons.map((pokemon) =>
+            pokemon.id === selectedPokemon.id
+              ? { ...pokemon, hasBeenSelected: true }
+              : pokemon
+          );
 
-        // Shuffle cards
-        return [...updatedList].sort(() => Math.random() - 0.5);
-      });
-    } else {
-      setHighScore(Math.max(highScore, score));
-      setScore(0);
-      setGameStatus("gameOver");
+          // Shuffle cards
+          return [...updatedList].sort(() => Math.random() - 0.5);
+        });
+      } else {
+        setHighScore(Math.max(highScore, score));
+        setGameStatus("gameOver");
+      }
     }
   };
 
   return (
     <div className="playing-field-container">
-      <h2>Pokemon Memory</h2>
+      <div className="page-header">
+        <img src={pokeIcon} alt="Pokémon Icon" />
+        <h2>
+          <span>Poké</span>memory
+        </h2>
+      </div>
 
       {isLoading ? (
         <LoadingSpinner message="Loading Pokemon..." />
@@ -124,7 +133,7 @@ export default function App() {
           {(gameStatus === "gameOver" || gameStatus === "gameWon") && (
             <EndScreen
               gameStatus={gameStatus}
-              highScore={highScore}
+              score={score}
               onPlayAgain={onPlayAgain}
               onQuit={onQuit}
             />

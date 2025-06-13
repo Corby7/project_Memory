@@ -11,14 +11,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 80px;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(6, 42mm);
   grid-auto-rows: 59mm;
-  background-color: blue;
   gap: 1.3rem;
   margin: 40px 0px;
 }

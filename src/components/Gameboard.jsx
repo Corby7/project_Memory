@@ -1,5 +1,5 @@
-import "./Gameboard.css";
 import Card from "./Card";
+import "./Gameboard.css";
 
 export default function Gameboard({
   pokemonList,
@@ -10,8 +10,8 @@ export default function Gameboard({
   return (
     <div className="gameboard">
       <div className="statistics">
-        <h2>Score: {score}</h2>
-        <h2>High Score: {highScore}</h2>
+        <h4>Score: {score}</h4>
+        <h4>High Score: {highScore}</h4>
       </div>
       <div className="grid-container">
         {pokemonList.slice().map((pokemon) => (
